@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница объявления</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li span {
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Страница объявления</h1>
+        <ul>
+            <li><span>Модель:</span> {{ last_car.name }}</li>
+            <li><span>Цена:</span> {{ last_car.price }}</li>
+            <li><span>Город:</span> {{ last_car.city }}</li>
+            <li><span>Поколение:</span> {{ last_car.age }}</li>
+            <li><span>Объем двигателя:</span> {{ last_car.engine_volume }}</li>
+            <li><span>Пробег:</span> {{ last_car.mileage }}</li>
+            <li><span>Коробка передач:</span> {{ last_car.transmission }}</li>
+            <li><span>Привод:</span> {{ last_car.drive_unit }}</li>
+            <li><span>Руль:</span> {{ last_car.steering_wheel }}</li>
+            <li><span>Цвет:</span> {{ last_car.color }}</li>
+            <li><span>Описание:</span> {{ last_car.description }}</li>
+            <li><span>Изображение</span> <img src="{{ url_for('static', filename=last_car.image) }}" alt="Изображение"></li>
+        </ul>
+        <a href="/">Вернуться на главную страницу</a>
+    </div>
+</body>
+</html>
