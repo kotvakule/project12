@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Shop</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+<header class="header" style="background-color: #696969; padding: 20px 0;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <h1 class="logo" style="color: #fff; margin: 0;">Minimalist Shop</h1>
+        <nav class="nav" style="float: right;">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li style="display: inline; margin-left: 20px;"><a href="main_page" style="color: #fff; text-decoration: none;">Главная</a></li>
+                {% if current_user.is_authenticated %}
+                    <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Профиль</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="{{ url_for('logout') }}" style="color: #fff; text-decoration: none;">Выйти</a></li>
+                {% else %}
+                    <li style="display: inline; margin-left: 20px;"><a href="register" style="color: #fff; text-decoration: none;">Зарегистрироваться</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="login" style="color: #fff; text-decoration: none;">Войти</a></li>
+                {% endif %}
+                <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">О нас</a></li>
+                <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" style="background-color: #f0f0f0; padding: 200px 0; text-align: center;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <h2 style="color: #333;">Добро пожаловать в Minimalist Shop</h2>
+        <p style="color: #666;">Minimalist Shop - это онлайн магазин, в котором вы найдете широкий ассортимент стильной и функциональной одежды для людей, предпочитающих простоту и элегантность в своем стиле. Наш магазин специализируется на предоставлении высококачественной одежды, которая подчеркивает ваш индивидуальный вкус и помогает выразить вашу уверенность и стиль.
+
+Особенности:
+
+Минимализм: Мы ценим простоту и чистоту линий. Вся наша одежда отличается минималистичным дизайном, который подчеркивает вашу индивидуальность без лишних деталей.
+
+Качество: Мы стремимся предложить только лучшее качество продукции. Все наши товары изготавливаются из высококачественных материалов и проходят строгий контроль качества.
+
+Функциональность: Одежда из Minimalist Shop не только красива, но и функциональна. Мы предлагаем практичные решения для вашего повседневного гардероба, которые обеспечат комфорт и удобство в любой ситуации.
+
+Широкий ассортимент: Наш магазин предлагает разнообразие одежды для различных возрастов, полов и стилей. У нас вы найдете всё от базовых элементов гардероба до стильных аксессуаров.
+
+Ценностное предложение:
+Minimalist Shop стремится создать для своих клиентов место, где они могут легко и удобно приобрести одежду высокого качества с минималистичным дизайном. Наша цель - помочь вам выглядеть стильно, чувствовать себя уверенно и комфортно в любой ситуации, не перегружая ваш гардероб излишними деталями.
+
+Категории продуктов:
+
+Мужская одежда
+Женская одежда
+Аксессуары
+Обувь
+Контактная информация:
+Адрес: ул. Примерная, 123, г. Вашгород
+Телефон: +7 (XXX) XXX-XX-XX
+Email: info@minimalistshop.com
+
+Посетите Minimalist Shop сегодня и обновите свой гардероб с лучшей одеждой для вашего стильного и минималистичного образа жизни!
+
+</p>
+        <a href="a" class="btn" style="display: inline-block; padding: 10px 20px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px;">Посмотреть продукты</a>
+        {% if current_user.is_authenticated %}
+            <p>Вы вошли в свой аккаунт как {{ current_user.username }}.</p>
+        {% endif %}
+    </div>
+</section>
+
+<footer class="footer" style="background-color: #696969; color: #fff; text-align: center; padding: 20px 0; position: absolute; bottom: 0; width: 100%;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <p>&copy; 2024 Minimalist Shop. Все права защищены.</p>
+    </div>
+</footer>
+
+</body>
+</html>

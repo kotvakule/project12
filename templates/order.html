@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<header class="header" style="background-color: #696969; padding: 20px 0;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <h1 class="logo" style="color: #fff; margin: 0;">Minimalist Shop</h1>
+        <nav class="nav" style="float: right;">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li style="display: inline; margin-left: 20px;"><a href="main_page" style="color: #fff; text-decoration: none;">Главная</a></li>
+                {% if current_user.is_authenticated %}
+                    <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Профиль</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="{{ url_for('logout') }}" style="color: #fff; text-decoration: none;">Выйти</a></li>
+                {% else %}
+                    <li style="display: inline; margin-left: 20px;"><a href="register" style="color: #fff; text-decoration: none;">Зарегистрироваться</a></li>
+                    <li style="display: inline; margin-left: 20px;"><a href="login" style="color: #fff; text-decoration: none;">Войти</a></li>
+                {% endif %}
+                <li style="display: inline; margin-left: 20px;"><a href="info" style="color: #fff; text-decoration: none;">О нас</a></li>
+                <li style="display: inline; margin-left: 20px;"><a href="cart" style="color: #fff; text-decoration: none;">Корзина</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="hero" style="background-color: #FFFFFF; padding: 200px 0; text-align: center;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <p style="font-size: 30px;"> Ваш заказ успешно оформлен. Пункт выдачи: Семей, улица Селевина, 25</p>
+    </div>
+</section>
+
+<footer class="footer" style="background-color: #696969; color: #fff; text-align: center; padding: 20px 0; position: absolute; bottom: 0; width: 100%;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <p>&copy; 2024 Minimalist Shop. Все права защищены.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

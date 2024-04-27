@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Shop</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+<header class="header" style="background-color: #696969; padding: 20px 0;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <h1 class="logo" style="color: #fff; margin: 0;">Minimalist Shop</h1>
+        <nav class="nav" style="float: right;">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li style="display: inline; margin-left: 20px;"><a href="main_page" style="color: #fff; text-decoration: none;">Главная</a></li>
+                <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Продукты</a></li>
+                <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">О нас</a></li>
+                <li style="display: inline; margin-left: 20px;"><a href="#" style="color: #fff; text-decoration: none;">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" style="background-color: #f0f0f0; padding: 200px 0; text-align: center;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+    <h1>Регистрация</h1>
+    <form method="POST" action="{{ url_for('register') }}">
+        {{ form.hidden_tag() }}
+        <p>{{ form.username.label }}: {{ form.username }}</p>
+        <p>{{ form.name.label }}: {{ form.name }}</p>
+        <p>{{ form.surname.label }}: {{ form.surname }}</p>
+        <p>{{ form.birthday.label }}: {{ form.birthday }}</p>
+        <p>{{ form.phone.label }}: {{ form.phone }}</p>
+        <p>{{ form.password.label }}: {{ form.password }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+    </div>
+</section>
+
+<footer class="footer" style="background-color: #696969; color: #fff; text-align: center; padding: 20px 0; position: absolute; bottom: 0; width: 100%;">
+    <div class="container" style="width: 80%; margin: 0 auto;">
+        <p>&copy; 2024 Minimalist Shop. Все права защищены.</p>
+    </div>
+</footer>
+
+</body>
+</html>
